@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Programación Orientada a Objetos</title>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript"></script>
+	<style type="text/css"></style>
+	<!-- [if lt IE 9]>
+	    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<!--  AÑADIR UNA FUNCIÓN CONSTRUCTOR EXISTENTE A NUESTRO NUEVO OBJETOS-->
+
+</head>
+<body>
+	<h1>Programación Orientada a Objetos</h1>
+	<div id="id_1">
+		
+	</div>
+<script type="text/javascript">
+	// emular herancias en JavaScript 
+	function Domestico () {
+		this.animal = "";
+		this.nombre= "";
+		this.configurarAnimal = function(nuevoAnimal) {
+			this.animal = nuevoAnimal;
+		}
+		this.configurarNombre = function(nuevoNombre) {
+			this.nombre = nuevoNombre;
+		}
+	}
+
+	var miGato = new Domestico();
+	miGato.configurarAnimal = "gato";
+	miGato.configurarNombre = "Silvestre";
+
+	var gatoVecino = new Domestico();
+	gatoVecino.configurarAnimal = "gato montés";
+	gatoVecino.configurarNombre = "Monti";
+
+	Perro.prototype = new Domestico();
+	function Perro() {
+		this.raza = "";
+		this.conigurarRaza = function(nuevaRaza) {
+			this.raza = nuevaRaza;
+		}
+		this.mostrarInfo = function() {
+			alert(this.nombre + " es un " + this.raza);
+		}
+	}
+
+	var perroApaleao = new Perro();
+	perroApaleao.configurarNombre("Txutxo Pulgoso");
+	perroApaleao.configurarAnimal("Galgo");
+
+                  /*   Extender objetos preconstruidos  con Prototype Built-in */
+
+                  String.prototype.voltear = function() {
+                  	// a través de una función anónima, hacemos que el método "voltear" herede todas la propiedades del objeto preconstruido  
+                  	// "String"
+                                  var salida = "";
+                                  for(var i = this.length-1; i>=0; i--) {
+                                  	   salida += this.substr(i, 1);
+                                  }
+                                  return salida;
+                  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+	function Cursos() {
+		this.MOOC = false
+		this.tematica = "";
+		this.nombre = "";
+		this.duración = "";
+		this.sitio = "";
+		this.autor = "";
+		this.fuente = "";
+		this.fecha = new Date();
+
+
+	}
+*/
+</script>
+<!-- Crear herencias-->
+<input type="button" value="Mostrar Info Pulgoso" onclick="perroApaleao.mostrarInfo()" />
+<hr>
+<script>
+	var enString = prompt("Escribe un texto:");
+	document.write(enString.voltear());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Programación Orientada o Objetos</title>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	
+	<style type="text/css"></style>
+	<!-- [if lt IE 9]>
+	    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"-->
+</head>
+<body>
+	<h1>Programación Orientada o Objetos</h1>
+	<div id="id_1"></div>
+<script type="text/javascript">
+		function Persona(nombrePersona) {
+			this.nombre = nombrePersona;
+			this.info = 'Esta persona se llama ' + this.nombre;
+			this.mostrarInfo = function() {
+				alert(this.info);
+			}
+		}
+
+		var persona1 = new Persona('Adan');
+		var persona2 = new Persona('Eva');
+		var persona3 = new Persona('Karlos');
+
+		Persona.prototype.diHola = function() {
+			alert(this.nombre + " dice Hola");
+		}
+		
+
+
+
+</script>
+<!-- Uso de Prototype-->
+<input type="button" value="Mostrar Info Adán" onclick="persona1.diHola()" />
+<input type="button" value="Mostrar Info Eva" onclick="persona2.mostrarInfo()" />
+<input type="button" value="Mostrar info Karlos" onclick = "persona3.diHola()" />
+<input type="button" value="karlos dice Hola" onclick="persona3.diHola()" />
+</body>
+</html>
